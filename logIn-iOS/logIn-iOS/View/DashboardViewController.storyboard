@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FyH-Df-M2o">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--DashboardViewController-->
+        <scene sceneID="7RL-Dk-xOo">
+            <objects>
+                <viewController storyboardIdentifier="DashboardViewController" title="DashboardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FyH-Df-M2o" customClass="DashboardViewController" customModule="logIn_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="du0-E6-iJ9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="fYW-Uh-59N">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5QY-K6-rWv">
+                                <rect key="frame" x="50" y="811" width="314" height="32"/>
+                                <segments>
+                                    <segment title="Home"/>
+                                    <segment title="Kategoria"/>
+                                    <segment title="Ustawienia"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControllTapped:" destination="FyH-Df-M2o" eventType="valueChanged" id="rWn-oA-kzg"/>
+                                </connections>
+                            </segmentedControl>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXj-ml-6gN">
+                                <rect key="frame" x="60" y="468" width="294" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.20690402390000001" green="0.25004947189999999" blue="0.53008097409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Wyloguj">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logoutButton:" destination="gGS-6d-o2Y" eventType="touchUpInside" id="aUh-br-AjP"/>
+                                    <action selector="logoutButtonTaped:" destination="gGS-6d-o2Y" eventType="touchUpInside" id="5Zq-z2-P7a"/>
+                                    <action selector="logoutButtonTaped:" destination="FyH-Df-M2o" eventType="touchUpInside" id="uno-ie-1P6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ijl-em-KzL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fYW-Uh-59N" firstAttribute="top" secondItem="du0-E6-iJ9" secondAttribute="top" id="4K3-oT-J7u"/>
+                            <constraint firstAttribute="bottom" secondItem="fYW-Uh-59N" secondAttribute="bottom" id="6Ld-0Y-r0j"/>
+                            <constraint firstItem="5QY-K6-rWv" firstAttribute="leading" secondItem="Ijl-em-KzL" secondAttribute="leading" constant="50" id="HK1-zj-awz"/>
+                            <constraint firstItem="fYW-Uh-59N" firstAttribute="trailing" secondItem="Ijl-em-KzL" secondAttribute="trailing" id="XGT-AQ-cwz"/>
+                            <constraint firstItem="Ijl-em-KzL" firstAttribute="bottom" secondItem="5QY-K6-rWv" secondAttribute="bottom" constant="20" id="eMs-H0-dK3"/>
+                            <constraint firstItem="Ijl-em-KzL" firstAttribute="trailing" secondItem="5QY-K6-rWv" secondAttribute="trailing" constant="50" id="j8X-xm-YSF"/>
+                            <constraint firstItem="fYW-Uh-59N" firstAttribute="leading" secondItem="Ijl-em-KzL" secondAttribute="leading" id="pkq-5R-zjB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logoutButton" destination="GXj-ml-6gN" id="TrE-Fx-XTF"/>
+                        <outlet property="segmentedControl" destination="5QY-K6-rWv" id="V53-sV-L4p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9oS-d5-3sJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-207.24637681159422" y="110.49107142857143"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gDg-CK-fS0">
+            <objects>
+                <viewController id="V5S-Ee-Gge" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SEM-In-fgP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="f0U-wO-zSz"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nqb-f9-NqO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XGo-en-Orp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="gGS-6d-o2Y" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="652" y="117"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="background" width="1512" height="2016"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

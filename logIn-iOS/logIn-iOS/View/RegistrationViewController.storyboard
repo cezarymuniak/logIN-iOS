@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pw7-rh-VDh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Pw7-rh-VDh">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="V8O-h4-rbG">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="V8O-h4-rbG">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="FGp-zy-JsE">
@@ -26,10 +28,11 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oL0-hc-7F8">
                                         <rect key="frame" x="20" y="10" width="294" height="34"/>
+                                        <color key="backgroundColor" white="1" alpha="0.90047187047288912" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="username"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8u-Bd-0ey">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8u-Bd-0ey">
                                         <rect key="frame" x="20" y="167" width="294" height="30"/>
                                         <color key="backgroundColor" red="0.20690402390000001" green="0.25004947189999999" blue="0.53008097409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Zarejestruj się">
@@ -46,32 +49,34 @@
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="powtórz hasło" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jd0-Yy-cDP">
                                         <rect key="frame" x="20" y="98" width="294" height="34"/>
+                                        <color key="backgroundColor" white="1" alpha="0.89744436504035596" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="hasło" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="faK-2T-pgp">
                                         <rect key="frame" x="20" y="54" width="294" height="34"/>
+                                        <color key="backgroundColor" white="1" alpha="0.89593061232408944" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hasło musi zawierać przynajmniej jedną wielką literę oraz jedną cyfrę" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8LU-Fe-WXr">
                                         <rect key="frame" x="20" y="133" width="294" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="systemPinkColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="krE-gB-dyj">
                                         <rect key="frame" x="324" y="108" width="85" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <state key="normal" title="Pokaż/ukryj hasło">
-                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" systemColor="labelColor"/>
                                         </state>
                                         <connections>
                                             <action selector="hidePasswordButtonTapped:" destination="Pw7-rh-VDh" eventType="touchUpInside" id="9Y0-Sv-7Bs"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="1" alpha="0.1484071845250414" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="faK-2T-pgp" firstAttribute="leading" secondItem="oL0-hc-7F8" secondAttribute="leading" id="0Gj-P0-Uoo"/>
                                     <constraint firstItem="O8u-Bd-0ey" firstAttribute="top" secondItem="8LU-Fe-WXr" secondAttribute="bottom" constant="10" id="1gG-ZQ-WPb"/>
@@ -94,10 +99,19 @@
                                     <constraint firstItem="8LU-Fe-WXr" firstAttribute="leading" secondItem="Jd0-Yy-cDP" secondAttribute="leading" id="yF6-Mt-0yK"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7dn-t7-eRX" customClass="TopBar" customModule="logIn_iOS" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="43" width="414" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="xiI-2c-DJk"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Y1a-Tj-SWU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="rvC-Io-JT7" firstAttribute="top" secondItem="FGp-zy-JsE" secondAttribute="bottom" constant="80" id="1M2-Jk-gGv"/>
+                            <constraint firstItem="FGp-zy-JsE" firstAttribute="top" secondItem="7dn-t7-eRX" secondAttribute="bottom" constant="50" id="7vc-5n-m4E"/>
                             <constraint firstItem="FGp-zy-JsE" firstAttribute="leading" secondItem="Y1a-Tj-SWU" secondAttribute="leading" constant="20" id="Ghk-5M-ySq"/>
                             <constraint firstItem="V8O-h4-rbG" firstAttribute="leading" secondItem="Y1a-Tj-SWU" secondAttribute="leading" id="NX5-NZ-2VX"/>
                             <constraint firstItem="rvC-Io-JT7" firstAttribute="leading" secondItem="Y1a-Tj-SWU" secondAttribute="leading" id="Rwx-uQ-Xh3"/>
@@ -107,9 +121,10 @@
                             <constraint firstItem="V8O-h4-rbG" firstAttribute="trailing" secondItem="Y1a-Tj-SWU" secondAttribute="trailing" id="etl-Uk-QrL"/>
                             <constraint firstItem="V8O-h4-rbG" firstAttribute="top" secondItem="UdS-SH-5rs" secondAttribute="top" id="fOw-ql-iUa"/>
                             <constraint firstItem="Y1a-Tj-SWU" firstAttribute="trailing" secondItem="FGp-zy-JsE" secondAttribute="trailing" constant="20" id="fxe-oO-pnb"/>
+                            <constraint firstItem="7dn-t7-eRX" firstAttribute="trailing" secondItem="Y1a-Tj-SWU" secondAttribute="trailing" id="lL9-9H-zOp"/>
+                            <constraint firstItem="7dn-t7-eRX" firstAttribute="leading" secondItem="Y1a-Tj-SWU" secondAttribute="leading" id="u77-f4-eO8"/>
                             <constraint firstAttribute="bottom" secondItem="V8O-h4-rbG" secondAttribute="bottom" id="wLK-o2-YAN"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Y1a-Tj-SWU"/>
                     </view>
                     <connections>
                         <outlet property="hidePasswordButton" destination="krE-gB-dyj" id="cAo-NH-O0B"/>
@@ -124,7 +139,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="5906" height="3937"/>
+        <image name="background" width="1512" height="2016"/>
         <image name="logo" width="251" height="125"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
