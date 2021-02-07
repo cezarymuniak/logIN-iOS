@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		83AB2F2625D074F500BA2B77 /* TopBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83AB2F2525D074F500BA2B77 /* TopBar.xib */; };
+		83AB2F2925D076A400BA2B77 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AB2F2825D076A400BA2B77 /* TopBar.swift */; };
+		83AB2F3A25D082B300BA2B77 /* DashboardViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83AB2F3925D082B300BA2B77 /* DashboardViewController.storyboard */; };
+		83AB2F3D25D0839000BA2B77 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AB2F3C25D0839000BA2B77 /* DashboardViewController.swift */; };
+		83AB2F4825D0931E00BA2B77 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AB2F4725D0931E00BA2B77 /* HomeViewController.swift */; };
 		AA6F123625C72F7C0035C938 /* DefaultsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F123525C72F7C0035C938 /* DefaultsCodable.swift */; };
 		AA6F123925C730A50035C938 /* RegistrationLoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F123825C730A50035C938 /* RegistrationLoginData.swift */; };
 		AAA423D225BC8F0F0022015A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA423D125BC8F0F0022015A /* AppDelegate.swift */; };
@@ -21,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		83AB2F2525D074F500BA2B77 /* TopBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopBar.xib; sourceTree = "<group>"; };
+		83AB2F2825D076A400BA2B77 /* TopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar.swift; sourceTree = "<group>"; };
+		83AB2F3925D082B300BA2B77 /* DashboardViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DashboardViewController.storyboard; sourceTree = "<group>"; };
+		83AB2F3C25D0839000BA2B77 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		83AB2F4725D0931E00BA2B77 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AA6F123525C72F7C0035C938 /* DefaultsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsCodable.swift; sourceTree = "<group>"; };
 		AA6F123825C730A50035C938 /* RegistrationLoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationLoginData.swift; sourceTree = "<group>"; };
 		AAA423CE25BC8F0F0022015A /* logIn-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "logIn-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +102,8 @@
 				AAA423D725BC8F0F0022015A /* MainViewController.storyboard */,
 				AAA423EC25BCCF960022015A /* LoginViewController.storyboard */,
 				AAA423EE25BCCFA40022015A /* RegistrationViewController.storyboard */,
+				83AB2F2525D074F500BA2B77 /* TopBar.xib */,
+				83AB2F3925D082B300BA2B77 /* DashboardViewController.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -102,6 +114,9 @@
 				AAA423D525BC8F0F0022015A /* MainViewController.swift */,
 				AAA423E825BCCEB80022015A /* LoginViewController.swift */,
 				AAA423EA25BCCEDC0022015A /* RegistrationViewController.swift */,
+				83AB2F2825D076A400BA2B77 /* TopBar.swift */,
+				83AB2F3C25D0839000BA2B77 /* DashboardViewController.swift */,
+				83AB2F4725D0931E00BA2B77 /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -167,6 +182,8 @@
 				AAA423DE25BC8F110022015A /* LaunchScreen.storyboard in Resources */,
 				AAA423ED25BCCF960022015A /* LoginViewController.storyboard in Resources */,
 				AAA423DB25BC8F110022015A /* Assets.xcassets in Resources */,
+				83AB2F3A25D082B300BA2B77 /* DashboardViewController.storyboard in Resources */,
+				83AB2F2625D074F500BA2B77 /* TopBar.xib in Resources */,
 				AAA423D925BC8F0F0022015A /* MainViewController.storyboard in Resources */,
 				AAA423EF25BCCFA40022015A /* RegistrationViewController.storyboard in Resources */,
 			);
@@ -179,12 +196,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83AB2F2925D076A400BA2B77 /* TopBar.swift in Sources */,
 				AA6F123925C730A50035C938 /* RegistrationLoginData.swift in Sources */,
 				AAA423E925BCCEB80022015A /* LoginViewController.swift in Sources */,
 				AAA423D625BC8F0F0022015A /* MainViewController.swift in Sources */,
 				AAA423D225BC8F0F0022015A /* AppDelegate.swift in Sources */,
 				AA6F123625C72F7C0035C938 /* DefaultsCodable.swift in Sources */,
+				83AB2F4825D0931E00BA2B77 /* HomeViewController.swift in Sources */,
 				AAA423EB25BCCEDC0022015A /* RegistrationViewController.swift in Sources */,
+				83AB2F3D25D0839000BA2B77 /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

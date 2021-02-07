@@ -15,6 +15,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    // Logowanie testowe aaaSSS1! ; aaaSSS1
+    
+    @IBOutlet weak var topBar: TopBar!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBAction func loginButtonTapped(_ sender: Any) {
@@ -39,12 +43,20 @@ class LoginViewController: UIViewController {
         }
         
         if   RegistrationLoginData.getRegistrationLoginData()?.shouldSaveUserLogin == loginTextField.text, RegistrationLoginData.getRegistrationLoginData()?.shouldSaveUserPassword ==  String(describing: SHA256.hash(data: (self.passwordTextField.text ?? "").data(using: .utf8)!)) {
-            let refreshAlert = UIAlertController(title: "Logowanie", message: "Użytkownik zalogowany poprawnie", preferredStyle: UIAlertController.Style.alert)
+//            let refreshAlert = UIAlertController(title: "Logowanie", message: "Użytkownik zalogowany poprawnie", preferredStyle: UIAlertController.Style.alert)
+//
+//            refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+//                print("Logika przycisku OK")
+//            }))
+//            self.present(refreshAlert, animated: true, completion: nil)
+//
             
-            refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-                print("Logika przycisku OK")
-            }))
-            self.present(refreshAlert, animated: true, completion: nil)
+            let VC = UIStoryboard(name: "DashboardViewController", bundle: nil).instantiateViewController(withIdentifier:  "DashboardViewController") as! DashboardViewController
+            
+            self.modalPresentationStyle = .fullScreen
+            self.present(VC, animated: true, completion: nil)
+            
+            
         } else {
             let refreshAlert = UIAlertController(title: "Logowanie", message: "Użytkownik zalogowany niepoprawnie", preferredStyle: UIAlertController.Style.alert)
             refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in

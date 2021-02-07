@@ -63,7 +63,7 @@ class RegistrationViewController: UIViewController {
             self.present(registrationAlert, animated: true, completion: nil)
             
         } else {
-            let registrationFailedAlert = UIAlertController(title: "Użytkownik zarejestrowany", message: "Rejestracja zakończona niepowodzeniem", preferredStyle: UIAlertController.Style.alert)
+            let registrationFailedAlert = UIAlertController(title: "Użytkownik niezarejestrowany", message: "Rejestracja zakończona niepowodzeniem", preferredStyle: UIAlertController.Style.alert)
             registrationFailedAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
                 print("Logika przycisku OK")
             }))
