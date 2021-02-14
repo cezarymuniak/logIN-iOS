@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		835F322425D9BD3A00D5E2A8 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 835F322325D9BD3A00D5E2A8 /* SwiftPackageProductDependency */; };
 		83AB2F2625D074F500BA2B77 /* TopBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83AB2F2525D074F500BA2B77 /* TopBar.xib */; };
 		83AB2F2925D076A400BA2B77 /* TopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AB2F2825D076A400BA2B77 /* TopBar.swift */; };
 		83AB2F3A25D082B300BA2B77 /* DashboardViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83AB2F3925D082B300BA2B77 /* DashboardViewController.storyboard */; };
@@ -51,17 +52,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				835F322425D9BD3A00D5E2A8 /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A44E9D0D44D655AEC702455 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AAA423C525BC8F0F0022015A = {
 			isa = PBXGroup;
 			children = (
 				AAA423D025BC8F0F0022015A /* logIn-iOS */,
 				AAA423CF25BC8F0F0022015A /* Products */,
+				3A44E9D0D44D655AEC702455 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +147,9 @@
 			dependencies = (
 			);
 			name = "logIn-iOS";
+			packageProductDependencies = (
+				835F322325D9BD3A00D5E2A8 /* SwiftPackageProductDependency */,
+			);
 			productName = "logIn-iOS";
 			productReference = AAA423CE25BC8F0F0022015A /* logIn-iOS.app */;
 			productType = "com.apple.product-type.application";
@@ -165,6 +178,9 @@
 				Base,
 			);
 			mainGroup = AAA423C525BC8F0F0022015A;
+			packageReferences = (
+				835F322225D9BD3A00D5E2A8 /* RemoteSwiftPackageReference */,
+			);
 			productRefGroup = AAA423CF25BC8F0F0022015A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -402,6 +418,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		835F322225D9BD3A00D5E2A8 /* RemoteSwiftPackageReference */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 19.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		835F322325D9BD3A00D5E2A8 /* SwiftPackageProductDependency */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 835F322225D9BD3A00D5E2A8 /* RemoteSwiftPackageReference */;
+			productName = KeychainSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AAA423C625BC8F0F0022015A /* Project object */;
 }

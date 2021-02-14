@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import CryptoKit
+import KeychainSwift
+
 
 class LoginViewController: UIViewController {
     
@@ -17,13 +19,15 @@ class LoginViewController: UIViewController {
     }
     
     // Logowanie testowe aaaSSS1! ; aaaSSS1
-    
+    let keychain = KeychainSwift()
+
     @IBOutlet weak var topBar: TopBar!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBAction func loginButtonTapped(_ sender: Any) {
         var loginPlaceholder = loginTextField.placeholder ?? ""
         var passwordPlaceholder = passwordTextField.placeholder ?? ""
+        
         
         if loginTextField.hasText {
             loginPlaceholder = "login"
@@ -50,10 +54,12 @@ class LoginViewController: UIViewController {
 //            }))
 //            self.present(refreshAlert, animated: true, completion: nil)
 //
-            
+            keychain.set(loginTextField.text ?? "", forKey: "userLogin")
+            keychain.set(passwordTextField.text ?? "", forKey: "userPassword")
+            keychain.set(true, forKey: "isUserLogged")
             let VC = UIStoryboard(name: "DashboardViewController", bundle: nil).instantiateViewController(withIdentifier:  "DashboardViewController") as! DashboardViewController
             
-            self.modalPresentationStyle = .fullScreen
+            VC.modalPresentationStyle = .overFullScreen
             self.present(VC, animated: true, completion: nil)
             
             

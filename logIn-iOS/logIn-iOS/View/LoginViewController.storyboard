@@ -68,13 +68,13 @@
                                     <constraint firstItem="8Qy-Vj-U5f" firstAttribute="top" secondItem="ZZ2-1O-qF9" secondAttribute="bottom" constant="10" id="zmg-Z5-Ndc"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4h-Ee-bxw" customClass="TopBar" customModule="logIn_iOS" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="43" width="414" height="50"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Owe-2d-6Hy"/>
-                                </constraints>
-                            </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fdo-RY-f09">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="rbm-8X-6hr"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Muk-X0-Q7k"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -87,10 +87,7 @@
                             <constraint firstItem="LsA-zL-EO1" firstAttribute="top" secondItem="cBd-qA-oO6" secondAttribute="top" id="K34-S8-JVX"/>
                             <constraint firstItem="gIc-6n-Upg" firstAttribute="centerX" secondItem="LsA-zL-EO1" secondAttribute="centerX" id="Qzb-Sj-GLr"/>
                             <constraint firstItem="gIc-6n-Upg" firstAttribute="leading" secondItem="Muk-X0-Q7k" secondAttribute="leading" id="SSz-So-Yqf"/>
-                            <constraint firstItem="e4h-Ee-bxw" firstAttribute="trailing" secondItem="Muk-X0-Q7k" secondAttribute="trailing" id="Uew-66-5cV"/>
-                            <constraint firstItem="e4h-Ee-bxw" firstAttribute="leading" secondItem="Muk-X0-Q7k" secondAttribute="leading" id="XX3-Su-Lze"/>
                             <constraint firstItem="gIc-6n-Upg" firstAttribute="centerY" secondItem="LsA-zL-EO1" secondAttribute="centerY" id="etB-G5-kQK"/>
-                            <constraint firstItem="DuQ-2N-CCB" firstAttribute="top" secondItem="e4h-Ee-bxw" secondAttribute="bottom" constant="50" id="mZr-fr-PSZ"/>
                             <constraint firstItem="LsA-zL-EO1" firstAttribute="trailing" secondItem="Muk-X0-Q7k" secondAttribute="trailing" id="oqn-iz-gwh"/>
                             <constraint firstItem="Muk-X0-Q7k" firstAttribute="trailing" secondItem="DuQ-2N-CCB" secondAttribute="trailing" constant="20" id="py3-Dk-Sup"/>
                         </constraints>
@@ -98,7 +95,6 @@
                     <connections>
                         <outlet property="loginTextField" destination="BhQ-MX-nKg" id="pD4-XI-ArJ"/>
                         <outlet property="passwordTextField" destination="ZZ2-1O-qF9" id="ZIa-fW-LY6"/>
-                        <outlet property="topBar" destination="e4h-Ee-bxw" id="WnI-Kj-j0p"/>
                         <outlet property="view" destination="cBd-qA-oO6" id="QdV-VR-HZA"/>
                     </connections>
                 </viewController>
