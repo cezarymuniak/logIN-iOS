@@ -53,7 +53,7 @@ class LoginViewController: UIViewController {
             
             let VC = UIStoryboard(name: "DashboardViewController", bundle: nil).instantiateViewController(withIdentifier:  "DashboardViewController") as! DashboardViewController
             
-            self.modalPresentationStyle = .fullScreen
+            VC.modalPresentationStyle = .fullScreen
             self.present(VC, animated: true, completion: nil)
             
             
