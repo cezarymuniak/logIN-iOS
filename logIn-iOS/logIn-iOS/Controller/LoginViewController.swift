@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    // Logowanie testowe aaaSSS1! ; aaaSSS1
+    // Logowanie testowe aaaSSS1! ; aaaSSS1!
     let keychain = KeychainSwift()
 
     @IBOutlet weak var topBar: TopBar!
@@ -65,7 +65,7 @@ class LoginViewController: UIViewController {
             
         } else {
             let refreshAlert = UIAlertController(title: "Logowanie", message: "Użytkownik zalogowany niepoprawnie", preferredStyle: UIAlertController.Style.alert)
-            refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction) in
                 print("Logika przycisku OK")
             }))
             

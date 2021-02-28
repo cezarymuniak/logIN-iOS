@@ -56,7 +56,7 @@ class RegistrationViewController: UIViewController {
             
             let registrationAlert = UIAlertController(title: "Użytkownik zarejestrowany", message: "Rejestracja zakończona powodzeniem", preferredStyle: UIAlertController.Style.alert)
             
-            registrationAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            registrationAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction) in
                 print("Logika przycisku OK")
             }))
             
@@ -64,7 +64,7 @@ class RegistrationViewController: UIViewController {
             
         } else {
             let registrationFailedAlert = UIAlertController(title: "Użytkownik niezarejestrowany", message: "Rejestracja zakończona niepowodzeniem", preferredStyle: UIAlertController.Style.alert)
-            registrationFailedAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            registrationFailedAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction) in
                 print("Logika przycisku OK")
             }))
             
