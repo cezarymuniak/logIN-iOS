@@ -59,7 +59,7 @@ class LoginViewController: UIViewController {
             keychain.set(true, forKey: "isUserLogged")
             let VC = UIStoryboard(name: "DashboardViewController", bundle: nil).instantiateViewController(withIdentifier:  "DashboardViewController") as! DashboardViewController
             
-            VC.modalPresentationStyle = .overFullScreen
+            VC.modalPresentationStyle = .fullScreen
             self.present(VC, animated: true, completion: nil)
             
             

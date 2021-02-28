@@ -18,6 +18,10 @@ class DashboardViewController: UIViewController {
     
     let keychain = KeychainSwift()
     
+    
+    @IBOutlet weak var homeContainerView: UIView!
+    @IBOutlet weak var categoriesContainerView: UIView!
+    @IBOutlet weak var settingsContainerView: UIView!
     @IBOutlet weak var logoutButton: UIButton!
     @IBAction func logoutButtonTaped(_ sender: Any) {
         RegistrationLoginData.shared.isUserExist = false
@@ -34,17 +38,22 @@ class DashboardViewController: UIViewController {
         switch segmentedControl.selectedSegmentIndex
         {
         case 0:
+            self.homeContainerView.alpha = 1
+            self.categoriesContainerView.alpha = 0
+            self.settingsContainerView.alpha = 0
             print("First Segment Selected" )
         case 1:
+            self.homeContainerView.alpha = 0
+            self.categoriesContainerView.alpha = 1
+            self.settingsContainerView.alpha = 0
             print( "Second Segment Selected" )
         case 2:
+            self.homeContainerView.alpha = 0
+            self.categoriesContainerView.alpha = 0
+            self.settingsContainerView.alpha = 1
             print( "Second Segment Selected" )
-            logoutButton.isHidden = false  
         default:
             break
         }
-        
-        
-    }
-    
+    }    
 }
