@@ -19,6 +19,8 @@ class DashboardViewController: UIViewController {
     let keychain = KeychainSwift()
     
     
+    @IBOutlet weak var productQuantityLabel: UILabel!
+    @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var homeContainerView: UIView!
     @IBOutlet weak var categoriesContainerView: UIView!
     @IBOutlet weak var settingsContainerView: UIView!
