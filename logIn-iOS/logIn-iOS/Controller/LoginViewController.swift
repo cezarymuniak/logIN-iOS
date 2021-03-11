@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CryptoKit
+import KeychainSwift
 
 class LoginViewController: UIViewController {
     
@@ -16,12 +17,13 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    // Logowanie testowe aaaSSS1! ; aaaSSS1
+    // Logowanie testowe aaaSSS1! ; aaaSSS1!
+    let keychain = KeychainSwift()
     
-    @IBOutlet weak var topBar: TopBar!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBAction func loginButtonTapped(_ sender: Any) {
+        
         var loginPlaceholder = loginTextField.placeholder ?? ""
         var passwordPlaceholder = passwordTextField.placeholder ?? ""
         
@@ -42,27 +44,24 @@ class LoginViewController: UIViewController {
             passwordTextField.attributedPlaceholder = NSAttributedString(string: passwordPlaceholder, attributes: [NSAttributedString.Key.foregroundColor : UIColor.red])
         }
         
-        if   RegistrationLoginData.getRegistrationLoginData()?.shouldSaveUserLogin == loginTextField.text, RegistrationLoginData.getRegistrationLoginData()?.shouldSaveUserPassword ==  String(describing: SHA256.hash(data: (self.passwordTextField.text ?? "").data(using: .utf8)!)) {
-//            let refreshAlert = UIAlertController(title: "Logowanie", message: "Użytkownik zalogowany poprawnie", preferredStyle: UIAlertController.Style.alert)
-//
-//            refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-//                print("Logika przycisku OK")
-//            }))
-//            self.present(refreshAlert, animated: true, completion: nil)
-//
+        let input = 00.00
+        let data = withUnsafeBytes(of: input) {Data($0)}
+        
+        if   RegistrationLoginData.getRegistrationLoginData()?.shouldSaveUserLogin == loginTextField.text, RegistrationLoginData.getRegistrationLoginData()?.shouldSaveUserPassword ==  String(describing: SHA256.hash(data: (self.passwordTextField.text ?? "").data(using: .utf8) ?? data)) {
             
-            let VC = UIStoryboard(name: "DashboardViewController", bundle: nil).instantiateViewController(withIdentifier:  "DashboardViewController") as! DashboardViewController
+            keychain.set(loginTextField.text ?? "", forKey: "userLogin")
+            keychain.set(passwordTextField.text ?? "", forKey: "userPassword")
+            keychain.set(true, forKey: "isUserLogged")
+            let VC = UIStoryboard(name: "DashboardViewController", bundle: nil).instantiateViewController(withIdentifier:  "DashboardViewController") 
             
             VC.modalPresentationStyle = .fullScreen
             self.present(VC, animated: true, completion: nil)
             
-            
         } else {
             let refreshAlert = UIAlertController(title: "Logowanie", message: "Użytkownik zalogowany niepoprawnie", preferredStyle: UIAlertController.Style.alert)
-            refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+            refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction) in
                 print("Logika przycisku OK")
             }))
-            
             self.present(refreshAlert, animated: true, completion: nil)
         }
     }
