@@ -12,14 +12,12 @@ import CryptoKit
 
 
 class RegistrationViewController: UIViewController {
-
+    
     let password = NSPredicate(format: "SELF MATCHES %@ ", "^(?=.*[a-z])(?=.*?[A-Z])(?=.*[A-Z]).{5,}$")
     let login = NSPredicate(format: "SELF MATCHES %@ ", "^.{5,}$")
     override func viewDidLoad() {
         super.viewDidLoad()
         hidePasswordButton.layer.cornerRadius = 5
-        hidePasswordButton.layer.borderWidth = 1
-        hidePasswordButton.layer.borderColor = UIColor.black.cgColor
         self.passwordTextField.isSecureTextEntry = true
         self.repeatPasswordTextField.isSecureTextEntry = true
     }
@@ -36,19 +34,38 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var hidePasswordButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repeatPasswordTextField: UITextField!
-    @IBAction func hidePasswordButtonTapped(_ sender: Any) {
+    @IBAction func hidePasswordButtonTapped(_ sender: UIButton) {
         if  self.passwordTextField.isSecureTextEntry == true {
             self.passwordTextField.isSecureTextEntry = false
             self.repeatPasswordTextField.isSecureTextEntry = false
+            hidePasswordButton.setTitle("Ukryj hasło", for: .normal)
+            pulsate()
         } else {
             self.passwordTextField.isSecureTextEntry = true
             self.repeatPasswordTextField.isSecureTextEntry = true
+            hidePasswordButton.setTitle("Pokaż hasło", for: .normal)
+            pulsate()
         }
     }
+    
+    func pulsate() {
+        let pulse = CASpringAnimation(keyPath: "transform.scale")
+        pulse.duration = 0.4
+        pulse.fromValue = 0.98
+        pulse.toValue = 1.0
+        pulse.autoreverses = true
+        pulse.repeatCount = 10
+        pulse.initialVelocity = 0.5
+        pulse.damping = 1.0
+        hidePasswordButton.layer.add(pulse, forKey: nil)
+    }
+    
     @IBAction func registrationButtonTapped(_ sender: Any) {
         if repeatPasswordTextField.text == passwordTextField.text, password.evaluate(with: repeatPasswordTextField.text), login.evaluate(with: repeatPasswordTextField.text) {
             
-            let passwordValue = String(describing: SHA256.hash(data: (self.passwordTextField.text ?? "").data(using: .utf8)!))
+            let input = 00.00
+            let data = withUnsafeBytes(of: input) {Data($0)}
+            let passwordValue = String(describing: SHA256.hash(data: (self.passwordTextField.text ?? "").data(using: .utf8) ?? data))
             
             RegistrationLoginData.shared.shouldSaveUserLogin = self.loginTextField.text ?? ""
             RegistrationLoginData.shared.shouldSaveUserPassword = passwordValue

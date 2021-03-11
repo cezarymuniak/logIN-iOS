@@ -18,7 +18,6 @@ class DashboardViewController: UIViewController {
     
     let keychain = KeychainSwift()
     
-    
     @IBOutlet weak var productQuantityLabel: UILabel!
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var homeContainerView: UIView!
@@ -28,32 +27,34 @@ class DashboardViewController: UIViewController {
     @IBAction func logoutButtonTaped(_ sender: Any) {
         RegistrationLoginData.shared.isUserExist = false
         keychain.set(false, forKey: "isUserLogged")
-        let VC = UIStoryboard(name: "MainViewController", bundle: nil).instantiateViewController(withIdentifier:  "MainViewController") as! MainViewController
-        
+        let VC = UIStoryboard(name: "MainViewController", bundle: nil).instantiateViewController(withIdentifier:  "MainViewController")
         VC.modalPresentationStyle = .fullScreen
         self.present(VC, animated: true, completion: nil)
-        
     }
+    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBAction func segmentedControllTapped(_ sender: Any) {
         
         switch segmentedControl.selectedSegmentIndex
         {
         case 0:
-            self.homeContainerView.alpha = 1
-            self.categoriesContainerView.alpha = 0
-            self.settingsContainerView.alpha = 0
-            print("First Segment Selected" )
+            UIView.animate(withDuration: 1) {
+                self.homeContainerView.alpha = 1
+                self.categoriesContainerView.alpha = 0
+                self.settingsContainerView.alpha = 0
+            }
         case 1:
-            self.homeContainerView.alpha = 0
-            self.categoriesContainerView.alpha = 1
-            self.settingsContainerView.alpha = 0
-            print( "Second Segment Selected" )
+            UIView.animate(withDuration: 1) {
+                self.homeContainerView.alpha = 0
+                self.categoriesContainerView.alpha = 1
+                self.settingsContainerView.alpha = 0
+            }
         case 2:
-            self.homeContainerView.alpha = 0
-            self.categoriesContainerView.alpha = 0
-            self.settingsContainerView.alpha = 1
-            print( "Second Segment Selected" )
+            UIView.animate(withDuration: 1) {
+                self.homeContainerView.alpha = 0
+                self.categoriesContainerView.alpha = 0
+                self.settingsContainerView.alpha = 1
+            }
         default:
             break
         }

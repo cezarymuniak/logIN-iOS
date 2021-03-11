@@ -14,30 +14,30 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if keychain.getBool("isUserLogged") == true {
-         //   keychain.get("userLogin")
-         //   keychain.get("userPassword")
-            let VC = UIStoryboard(name: "DashboardViewController", bundle: nil).instantiateViewController(withIdentifier:  "DashboardViewController") as! DashboardViewController
+            let VC = UIStoryboard(name: "DashboardViewController", bundle: nil).instantiateViewController(withIdentifier:  "DashboardViewController") 
             VC.modalPresentationStyle = .overFullScreen
             self.present(VC, animated: true, completion: nil)
-        } 
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
-        let VC1 = UIStoryboard(name: "LoginViewController", bundle: nil).instantiateViewController(withIdentifier:  "LoginViewController") as! LoginViewController
+        let VC1 = UIStoryboard(name: "LoginViewController", bundle: nil).instantiateViewController(withIdentifier:  "LoginViewController")
         
         VC1.modalPresentationStyle = .fullScreen
-        self.present(VC1, animated: true, completion: nil)
+        self.navigationController?.pushViewController(VC1, animated: true)
     }
     
     @IBAction func registrationButtonTapped(_ sender: Any) {
-        let VC2 = UIStoryboard(name: "RegistrationViewController", bundle: nil).instantiateViewController(withIdentifier:  "RegistrationViewController") as! RegistrationViewController
-        
+        let VC2 = UIStoryboard(name: "RegistrationViewController", bundle: nil).instantiateViewController(withIdentifier:  "RegistrationViewController")
         VC2.modalPresentationStyle = .fullScreen
-        self.present(VC2, animated: true, completion: nil)
+        self.navigationController?.pushViewController(VC2, animated: true)
     }
 }
 
