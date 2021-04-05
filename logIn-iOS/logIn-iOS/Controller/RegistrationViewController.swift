@@ -35,7 +35,7 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var repeatPasswordTextField: UITextField!
     @IBAction func hidePasswordButtonTapped(_ sender: UIButton) {
-        if  self.passwordTextField.isSecureTextEntry == true {
+        if  self.passwordTextField.isSecureTextEntry {
             self.passwordTextField.isSecureTextEntry = false
             self.repeatPasswordTextField.isSecureTextEntry = false
             hidePasswordButton.setTitle("Ukryj hasło", for: .normal)

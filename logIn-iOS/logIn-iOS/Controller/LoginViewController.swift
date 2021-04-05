@@ -18,8 +18,8 @@ class LoginViewController: UIViewController {
     }
     
     // Logowanie testowe aaaSSS1! ; aaaSSS1!
-    let keychain = KeychainSwift()
-    
+    var keychain: KeychainSwift { return KeychainSwift() }
+
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBAction func loginButtonTapped(_ sender: Any) {
@@ -45,13 +45,13 @@ class LoginViewController: UIViewController {
         }
         
         let input = 00.00
-        let data = withUnsafeBytes(of: input) {Data($0)}
+        let data = withUnsafeBytes(of: input) { Data($0) }
         
         if   RegistrationLoginData.getRegistrationLoginData()?.shouldSaveUserLogin == loginTextField.text, RegistrationLoginData.getRegistrationLoginData()?.shouldSaveUserPassword ==  String(describing: SHA256.hash(data: (self.passwordTextField.text ?? "").data(using: .utf8) ?? data)) {
             
-            keychain.set(loginTextField.text ?? "", forKey: "userLogin")
-            keychain.set(passwordTextField.text ?? "", forKey: "userPassword")
-            keychain.set(true, forKey: "isUserLogged")
+            keychain.set(loginTextField.text ?? "", forKey: KeyHolder.userLogin.description)
+            keychain.set(passwordTextField.text ?? "", forKey: KeyHolder.userPassword.description)
+            keychain.set(true, forKey: KeyHolder.isUserLogged.description)
             let VC = UIStoryboard(name: "DashboardViewController", bundle: nil).instantiateViewController(withIdentifier:  "DashboardViewController") 
             
             VC.modalPresentationStyle = .fullScreen
