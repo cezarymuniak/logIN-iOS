@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 import KeychainSwift
 
-class DashboardViewController: UIViewController {
+final class DashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    let keychain = KeychainSwift()
+    var keychain: KeychainSwift { return KeychainSwift() }
     
     @IBOutlet weak var productQuantityLabel: UILabel!
     @IBOutlet weak var productNameLabel: UILabel!
@@ -26,7 +26,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var logoutButton: UIButton!
     @IBAction func logoutButtonTaped(_ sender: Any) {
         RegistrationLoginData.shared.isUserExist = false
-        keychain.set(false, forKey: "isUserLogged")
+        keychain.set(false, forKey: KeyHolder.isUserLogged.description)
         let VC = UIStoryboard(name: "MainViewController", bundle: nil).instantiateViewController(withIdentifier:  "MainViewController")
         VC.modalPresentationStyle = .fullScreen
         self.present(VC, animated: true, completion: nil)

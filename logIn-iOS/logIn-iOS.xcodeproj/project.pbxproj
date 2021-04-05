@@ -10,6 +10,7 @@
 		835F322425D9BD3A00D5E2A8 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 835F322325D9BD3A00D5E2A8 /* KeychainSwift */; };
 		83AB2F3A25D082B300BA2B77 /* DashboardViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83AB2F3925D082B300BA2B77 /* DashboardViewController.storyboard */; };
 		83AB2F3D25D0839000BA2B77 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83AB2F3C25D0839000BA2B77 /* DashboardViewController.swift */; };
+		83F99ABC261B8800007105DC /* KeyHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F99ABB261B87FF007105DC /* KeyHolder.swift */; };
 		AA6F123625C72F7C0035C938 /* DefaultsCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F123525C72F7C0035C938 /* DefaultsCodable.swift */; };
 		AA6F123925C730A50035C938 /* RegistrationLoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA6F123825C730A50035C938 /* RegistrationLoginData.swift */; };
 		AAA423D225BC8F0F0022015A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA423D125BC8F0F0022015A /* AppDelegate.swift */; };
@@ -26,6 +27,8 @@
 /* Begin PBXFileReference section */
 		83AB2F3925D082B300BA2B77 /* DashboardViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DashboardViewController.storyboard; sourceTree = "<group>"; };
 		83AB2F3C25D0839000BA2B77 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		83F99ABA261B866F007105DC /* SwiftLint.pkg */ = {isa = PBXFileReference; lastKnownFileType = file; name = SwiftLint.pkg; path = ../../Downloads/SwiftLint.pkg; sourceTree = "<group>"; };
+		83F99ABB261B87FF007105DC /* KeyHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyHolder.swift; sourceTree = "<group>"; };
 		AA6F123525C72F7C0035C938 /* DefaultsCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsCodable.swift; sourceTree = "<group>"; };
 		AA6F123825C730A50035C938 /* RegistrationLoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationLoginData.swift; sourceTree = "<group>"; };
 		AAA423CE25BC8F0F0022015A /* logIn-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "logIn-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,12 +63,21 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		83F99AB9261B866E007105DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83F99ABA261B866F007105DC /* SwiftLint.pkg */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AAA423C525BC8F0F0022015A = {
 			isa = PBXGroup;
 			children = (
 				AAA423D025BC8F0F0022015A /* logIn-iOS */,
 				AAA423CF25BC8F0F0022015A /* Products */,
 				3A44E9D0D44D655AEC702455 /* Pods */,
+				83F99AB9261B866E007105DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +101,7 @@
 				AAA423DC25BC8F110022015A /* LaunchScreen.storyboard */,
 				AAA423DF25BC8F110022015A /* Info.plist */,
 				AA6F123525C72F7C0035C938 /* DefaultsCodable.swift */,
+				83F99ABB261B87FF007105DC /* KeyHolder.swift */,
 			);
 			path = "logIn-iOS";
 			sourceTree = "<group>";
@@ -203,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA6F123925C730A50035C938 /* RegistrationLoginData.swift in Sources */,
+				83F99ABC261B8800007105DC /* KeyHolder.swift in Sources */,
 				AAA423E925BCCEB80022015A /* LoginViewController.swift in Sources */,
 				AAA423D625BC8F0F0022015A /* MainViewController.swift in Sources */,
 				AAA423D225BC8F0F0022015A /* AppDelegate.swift in Sources */,

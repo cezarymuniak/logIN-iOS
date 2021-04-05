@@ -10,10 +10,12 @@ import UIKit
 import KeychainSwift
 
 class MainViewController: UIViewController {
-    let keychain = KeychainSwift()
+    var keychain: KeychainSwift { return KeychainSwift() }
+    
+  //  guard let isUserLogged = KeyHolder.isUserLogged.description else { return }
     
     override func viewDidAppear(_ animated: Bool) {
-        if keychain.getBool("isUserLogged") == true {
+        if keychain.getBool(KeyHolder.isUserLogged.description) ?? false {
             let VC = UIStoryboard(name: "DashboardViewController", bundle: nil).instantiateViewController(withIdentifier:  "DashboardViewController") 
             VC.modalPresentationStyle = .overFullScreen
             self.present(VC, animated: true, completion: nil)
